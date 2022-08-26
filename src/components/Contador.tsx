@@ -2,20 +2,24 @@ import { useState } from "react";
 
 export const Contador = () => {
   let [counter, setCounter] = useState(0);
+  const acum = (num: number) => setCounter(counter + num);
 
   return (
     <>
-      <p> {counter} </p>
-      <button style={{ color: "blue" }}
+      <h1> {counter} </h1>
+      <button
+        style={{ color: "green" }}
         onClick={() => {
-          setCounter(counter++);
+          acum(1);
         }}
       >
         +1
       </button>
-      <button style={{ color: "blue" }}
+      &nbsp;
+      <button
+        style={{ color: "green" }}
         onClick={() => {
-          setCounter(counter-1);
+          acum(-1);
         }}
       >
         -1
